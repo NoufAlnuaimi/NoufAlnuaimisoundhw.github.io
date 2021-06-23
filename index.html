@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <title></title>
+      <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="button-container">
+    <div class="item">
+  <button class="btn" id = "playpausebtn">click me to start the walk!</button>
+</div>
+</div>
+
+
+    <div class="title-container">
+    <div class="title">
+  <h1> A Walk In My Neighborhood </h1>
+    </div>
+    </div>
+    <audio id="myAudio">
+      <source  src="walkinmyneighbourhood.mp3" type="audio/mpeg">
+    </audio>
+  <div class="container">
+  <div class="images">
+    <image id="birds" src="birds.jpeg">
+    <image id="trees" src="trees.jpeg">
+    <image id="airplane" src="airplane.jpg" >
+    <image id="palms" src="palms.jpeg" >
+    <image id="villas" src="villas.png">
+    <image id="roads" src="road.png">
+</div>
+</div>
+<div class="thanks-container">
+<div id = "ending" class="ending">
+<h2> Hope you enjoyed! </h2>
+</div>
+</div>
+<script>
+var playpausebtn, audio;
+function initAudioPlayer(){
+ audio = document.getElementById('myAudio');
+ //setting object refrences
+ playpausebtn = document.getElementById('playpausebtn');
+ //event handling
+ playpausebtn.addEventListener("click", playPause);
+ //functions
+ function playPause(){
+   if (audio.paused){
+     audio.play();
+     playpausebtn.style.backgroundColor = "white";
+   }
+   else{
+     audio.pause();
+     playpausebtn.style.backgroundColor = "#cdb891";
+   }
+ }
+}
+window.addEventListener("load", initAudioPlayer);
+//video ending
+console.log("working")
+var Audioended = document.getElementById('ending');
+$("#myAudio").on("ended", function() {
+   console.log("audio ended");
+  Audioended.style.display="block";
+ playpausebtn.style.backgroundColor = "#cdb891";
+ document.getElementById('roads').style.display = "none"
+});
+//images
+var currentTime
+var myAudio1 = document.getElementById('myAudio');
+myAudio1.addEventListener("timeupdate",()=>{
+currentTime = myAudio1.currentTime
+ if (currentTime > 0){
+   document.getElementById('birds').style.display = "block"
+ }
+   if (currentTime > 5){
+     document.getElementById('trees').style.display = "block"
+     document.getElementById('birds').style.display = "none"
+   }
+   if (currentTime > 10){
+  document.getElementById('airplane').style.display = "block"
+       document.getElementById('trees').style.display = "none"
+   }
+   if (currentTime > 25 ){
+     document.getElementById('villas').style.display = "block"
+document.getElementById('airplane').style.display = "none"
+   }
+   if (currentTime > 40 ){
+          document.getElementById('villas').style.display = "none"
+     document.getElementById('roads').style.display = "block"
+   }
+});
+
+</script>
+  </body>
+</html>

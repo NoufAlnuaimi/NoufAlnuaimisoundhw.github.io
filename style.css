@@ -1,0 +1,103 @@
+body{
+  background-color: #B8E2F2;
+}
+.title-container{
+  width: 40%;
+  margin: auto;
+  display: flex;
+  margin-top: 0;
+}
+.title{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: #cdb891;
+ font-family: 'Roboto Mono', monospace;
+ font-size: 1.5em;
+overflow: hidden;
+}
+@media (max-width :992px) {
+.container{
+flex-wrap:wrap;
+}
+}
+
+
+
+.thanks-container{
+  width: 50%;
+  margin: auto;
+  margin-top: 10%;
+}
+.ending{
+  width: 100%;
+  text-align: center;
+  color: #344d0e;
+ font-family: 'Roboto Mono', monospace;
+}
+
+#ending{
+display: none;
+}
+
+.container{
+  width: 40%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.items1{
+  display: inline-block;
+  width: 100%;
+}
+#birds{
+  display:none;
+  width:400px
+}
+#trees{
+  display:none;
+  width:400px
+}
+#palms{
+ display:none;
+ width:400px
+}
+#roads{
+  display:none;
+  width:400px
+}
+#airplane{
+  display:none;
+  width:400px
+}
+#villas{
+  display:none;
+  width:400px
+}
+button {
+background-color: #cdb891;
+color: #B8E2F2;
+border: none;
+width:100px;
+height:50px;
+cursor:pointer;
+}
+.button-container{
+  position: absolute;
+right: 0;
+bottom:   20%;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+
+}
+.item{
+  display: inline-block;
+  width: 20%;
+}
+
+#playpausebtn{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8em;
+}
